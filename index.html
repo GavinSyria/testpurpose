@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>TEST</title>
+    </head>
+    <body>
+        <h1>Get HTML through ajax</h1>
+        <div id="container">
+            
+        </div>
+        <script>
+            const xhr = new XMLHttpRequest();
+            const container = document.getElementById("container");
+            xhr.onload = function() {
+            if(this.status === 200){
+                container.innerHTML = xhr.responseText;
+            
+            }
+            else{
+                console.log("wrong");
+            }
+            };
+            xhr.open('get', 'snippet.html');
+            xhr.send();
+        </script>
+    </body>
+</html>
